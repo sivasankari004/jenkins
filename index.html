@@ -4,51 +4,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sweet Cravings | Cake Shop</title>
+<title>Glow & Grace | Beauty Studio</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
     scroll-behavior: smooth;
 }
 
 :root {
-    --pink: #e88c9d;
-    --dark: #422b32;
-    --cream: #fff8f5;
-    --light: #ffe9eb;
+    --pink: #c87585;
+    --dark: #33272b;
+    --gold: #c5a46b;
+    --cream: #fffaf6;
+    --light: #f8e9e9;
 }
 
 body {
+    font-family: 'DM Sans', sans-serif;
     background: var(--cream);
     color: var(--dark);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
 }
 
 header {
     background: white;
     padding: 18px 7%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 12px #00000010;
+    box-shadow: 0 3px 15px #00000010;
 }
 
 .logo {
-    font-size: 27px;
-    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
     color: var(--pink);
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 23px;
 }
 
 nav a {
     text-decoration: none;
     color: var(--dark);
-    margin-left: 25px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -56,31 +69,45 @@ nav a:hover {
     color: var(--pink);
 }
 
-.cart {
+.book-btn, .primary-btn {
     background: var(--pink);
     color: white;
-    padding: 10px 17px;
-    border-radius: 25px;
+    padding: 13px 24px;
     border: none;
+    border-radius: 5px;
+    text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
+}
+
+.book-btn:hover, .primary-btn:hover {
+    background: var(--dark);
 }
 
 .hero {
     min-height: 570px;
     display: flex;
     align-items: center;
-    padding: 70px 8%;
-    background: linear-gradient(90deg, #fff0ee 45%, #fbd9dc);
-    gap: 35px;
+    padding: 65px 8%;
+    gap: 45px;
+    background: #f7e8e7;
 }
 
 .hero-content {
     flex: 1;
 }
 
+.tag {
+    color: var(--pink);
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .hero h1 {
     font-size: clamp(40px, 6vw, 65px);
-    line-height: 1.15;
+    line-height: 1.2;
     margin-bottom: 20px;
 }
 
@@ -89,38 +116,20 @@ nav a:hover {
 }
 
 .hero p {
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 28px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background: var(--pink);
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.btn:hover {
-    background: var(--dark);
+    line-height: 1.9;
+    color: #77686b;
+    margin-bottom: 30px;
 }
 
 .hero-image {
     flex: 1;
-    text-align: center;
 }
 
 .hero-image img {
     width: 100%;
-    max-width: 480px;
-    height: 390px;
+    height: 420px;
     object-fit: cover;
-    border-radius: 45% 45% 20px 20px;
+    border-radius: 180px 180px 10px 10px;
 }
 
 section {
@@ -133,107 +142,12 @@ section {
 }
 
 .section-title h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 38px;
+    margin-bottom: 12px;
 }
 
 .section-title p {
-    color: #8c7278;
-}
-
-.categories {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.category {
-    background: white;
-    text-align: center;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 5px 20px #00000008;
-}
-
-.category img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-.category h3 {
-    font-size: 18px;
-}
-
-.products {
-    background: #fff0ee;
-}
-
-.search-box {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 30px;
-    padding: 13px 18px;
-    border: 1px solid #e8c5ca;
-    border-radius: 30px;
-    outline: none;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.product {
-    background: white;
-    border-radius: 18px;
-    overflow: hidden;
-    transition: .3s;
-    box-shadow: 0 5px 20px #00000008;
-}
-
-.product:hover {
-    transform: translateY(-7px);
-}
-
-.product img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-}
-
-.product-info {
-    padding: 20px;
-}
-
-.product-info h3 {
-    margin-bottom: 8px;
-}
-
-.price {
-    color: var(--pink);
-    font-weight: bold;
-    font-size: 20px;
-    margin: 12px 0;
-}
-
-.add-btn {
-    width: 100%;
-    padding: 12px;
-    background: var(--pink);
-    border: none;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.add-btn:hover {
-    background: var(--dark);
+    color: #897a7c;
 }
 
 .about {
@@ -243,10 +157,10 @@ section {
 }
 
 .about img {
-    width: 45%;
-    height: 350px;
+    width: 48%;
+    height: 390px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 12px;
 }
 
 .about-content {
@@ -254,75 +168,224 @@ section {
 }
 
 .about-content h2 {
-    font-size: 35px;
+    font-size: 38px;
     margin-bottom: 20px;
 }
 
 .about-content p {
     line-height: 1.9;
+    color: #76686b;
     margin-bottom: 20px;
 }
 
-.offer {
-    background: var(--pink);
-    color: white;
-    text-align: center;
-    padding: 65px 20px;
+.services {
+    background: #f9eeee;
 }
 
-.offer h2 {
-    font-size: 36px;
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .3s;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.service-info {
+    padding: 22px;
+}
+
+.service-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service-info p {
+    color: #88777b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.service-price {
+    color: var(--pink);
+    font-size: 21px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.service-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.service-btn:hover {
+    background: var(--pink);
+}
+
+.why-us {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    background: #f5eee5;
+    text-align: center;
+}
+
+.why-card {
+    padding: 25px;
+}
+
+.why-card h3 {
+    margin-bottom: 12px;
+    color: var(--pink);
+}
+
+.why-card p {
+    color: #77686b;
+    line-height: 1.7;
+}
+
+.booking {
+    background: #f9eeee;
+}
+
+.booking-container {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px #0000000b;
+}
+
+.booking-container input,
+.booking-container select,
+.booking-container textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: 1px solid #e6d6d6;
+    border-radius: 5px;
+    outline: none;
+    font-family: inherit;
+}
+
+.booking-container input:focus,
+.booking-container select:focus,
+.booking-container textarea:focus {
+    border-color: var(--pink);
+}
+
+.booking-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.booking-container button {
+    width: 100%;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.review {
+    background: white;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.stars {
+    color: var(--gold);
     margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.review p {
+    line-height: 1.8;
+    color: #76686b;
+}
+
+.review h3 {
+    margin-top: 18px;
+    color: var(--pink);
 }
 
 .contact {
     text-align: center;
+    background: #f8e9e9;
 }
 
-.contact p {
-    margin: 12px;
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.contact-card {
+    background: white;
+    padding: 25px;
+    min-width: 210px;
+    border-radius: 10px;
+}
+
+.contact-card h3 {
+    color: var(--pink);
+    margin-bottom: 12px;
 }
 
 footer {
     background: var(--dark);
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 35px 15px;
 }
 
-.cart-details {
-    background: white;
-    border: 1px solid #eed5d8;
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 500px;
-    margin: 20px auto;
-    display: none;
-}
-
-.cart-details h3 {
+footer .logo {
     margin-bottom: 12px;
 }
 
-.cart-details p {
-    padding: 7px 0;
+footer p {
+    line-height: 1.8;
+    font-size: 14px;
 }
 
 @media(max-width: 850px) {
-    .categories {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .hero, .about {
         flex-direction: column;
     }
 
     .about img {
         width: 100%;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -333,27 +396,31 @@ footer {
     }
 
     nav {
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
+        gap: 13px;
     }
 
     nav a {
-        margin: 0;
-        font-size: 13px;
+        font-size: 12px;
     }
 
-    .product-grid {
+    .service-grid,
+    .testimonials,
+    .why-us {
         grid-template-columns: 1fr;
     }
 
     .hero-image img {
-        height: 280px;
+        height: 300px;
     }
 
     section {
         padding: 55px 6%;
+    }
+
+    .booking-container {
+        padding: 22px;
     }
 }
 </style>
@@ -361,278 +428,375 @@ footer {
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <div class="logo">🍰 Sweet Cravings</div>
+    <div class="logo">✨ Glow & Grace</div>
 
     <nav>
         <a href="#home">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#products">Cakes</a>
         <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Appointment</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <button class="cart" onclick="toggleCart()">
-        🛒 Cart (<span id="cart-count">0</span>)
-    </button>
+    <a href="#booking" class="book-btn">Book Now</a>
 </header>
 
 <!-- HOME -->
 <div class="hero" id="home">
+
     <div class="hero-content">
-        <h1>Life is Better with <span>Cake!</span></h1>
+        <div class="tag">WELCOME TO GLOW & GRACE</div>
+
+        <h1>Discover Your <span>Natural Beauty</span></h1>
+
         <p>
-            Discover delicious handmade cakes made with love.
-            Fresh ingredients, beautiful designs and unforgettable
-            flavours for every special moment.
+            Experience luxury beauty treatments and professional
+            salon services. Our expert team is here to make
+            your special moments even more beautiful.
         </p>
-        <a href="#products" class="btn">Explore Cakes</a>
+
+        <a href="#services" class="primary-btn">Explore Services</a>
     </div>
 
     <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900"
-        alt="Delicious chocolate cake">
-    </div>
-</div>
-
-<!-- CATEGORIES -->
-<section id="categories">
-    <div class="section-title">
-        <h2>Our Categories</h2>
-        <p>Find your favourite sweet treats</p>
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900"
+        alt="Beautiful beauty salon">
     </div>
 
-    <div class="categories">
-        <div class="category">
-            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300" alt="Birthday cake">
-            <h3>Birthday Cakes</h3>
-        </div>
-
-        <div class="category">
-            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=300" alt="Wedding cake">
-            <h3>Wedding Cakes</h3>
-        </div>
-
-        <div class="category">
-            <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=300" alt="Cupcakes">
-            <h3>Cupcakes</h3>
-        </div>
-
-        <div class="category">
-            <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=300" alt="Chocolate cake">
-            <h3>Chocolate Cakes</h3>
-        </div>
-    </div>
-</section>
-
-<!-- PRODUCTS -->
-<section class="products" id="products">
-    <div class="section-title">
-        <h2>Our Best Sellers</h2>
-        <p>Freshly baked happiness in every bite</p>
-    </div>
-
-    <input type="text" id="search"
-    class="search-box"
-    placeholder="Search your favourite cake..."
-    oninput="searchProducts()">
-
-    <div class="product-grid" id="product-grid">
-
-        <div class="product" data-name="Chocolate Cake">
-            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500" alt="Chocolate Cake">
-            <div class="product-info">
-                <h3>Chocolate Cake</h3>
-                <p>Rich and creamy chocolate delight.</p>
-                <div class="price">₹599</div>
-                <button class="add-btn" onclick="addToCart('Chocolate Cake',599)">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product" data-name="Strawberry Cake">
-            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500" alt="Strawberry Cake">
-            <div class="product-info">
-                <h3>Strawberry Cake</h3>
-                <p>Sweet strawberry cream cake.</p>
-                <div class="price">₹699</div>
-                <button class="add-btn" onclick="addToCart('Strawberry Cake',699)">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product" data-name="Black Forest">
-            <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500" alt="Black Forest">
-            <div class="product-info">
-                <h3>Black Forest</h3>
-                <p>Classic chocolate and cherry cake.</p>
-                <div class="price">₹749</div>
-                <button class="add-btn" onclick="addToCart('Black Forest',749)">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product" data-name="Vanilla Cake">
-            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=500" alt="Vanilla Cake">
-            <div class="product-info">
-                <h3>Vanilla Cake</h3>
-                <p>Soft and delicious vanilla cream.</p>
-                <div class="price">₹499</div>
-                <button class="add-btn" onclick="addToCart('Vanilla Cake',499)">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product" data-name="Red Velvet">
-            <img src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?w=500" alt="Red Velvet">
-            <div class="product-info">
-                <h3>Red Velvet</h3>
-                <p>Premium red velvet cream cake.</p>
-                <div class="price">₹899</div>
-                <button class="add-btn" onclick="addToCart('Red Velvet',899)">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="product" data-name="Cupcakes">
-            <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=500" alt="Cupcakes">
-            <div class="product-info">
-                <h3>Special Cupcakes</h3>
-                <p>Beautifully decorated sweet cupcakes.</p>
-                <div class="price">₹299</div>
-                <button class="add-btn" onclick="addToCart('Special Cupcakes',299)">Add to Cart</button>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- CART -->
-<div class="cart-details" id="cart-details">
-    <h3>🛒 Your Shopping Cart</h3>
-    <div id="cart-items">Your cart is empty.</div>
-    <h3 id="total">Total: ₹0</h3>
-    <button class="btn" onclick="checkout()">Place Order</button>
 </div>
 
 <!-- ABOUT -->
 <section class="about" id="about">
-    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700" alt="Bakery">
+
+    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800"
+    alt="Beauty salon interior">
+
     <div class="about-content">
-        <h2>About Sweet Cravings</h2>
+
+        <div class="tag">ABOUT OUR STUDIO</div>
+
+        <h2>Beauty Begins With Confidence</h2>
+
         <p>
-            Welcome to Sweet Cravings! We believe every celebration
-            deserves a delicious cake. Our cakes are prepared with
-            quality ingredients, creativity and passion.
+            Welcome to Glow & Grace Beauty Studio, where beauty
+            meets relaxation. We provide professional beauty
+            services in a comfortable and welcoming environment.
         </p>
+
         <p>
-            From birthdays to weddings, we make every occasion
-            extra special with our freshly baked treats.
+            From skincare and facials to hairstyling and makeup,
+            our team focuses on quality service and making
+            every visit a wonderful experience.
         </p>
-        <a href="#contact" class="btn">Contact Us</a>
+
+        <a href="#booking" class="primary-btn">Book An Appointment</a>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+    <div class="section-title">
+        <h2>Our Beauty Services</h2>
+        <p>Professional care for your beauty and relaxation</p>
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600"
+            alt="Makeup service">
+
+            <div class="service-info">
+                <h3>Bridal Makeup</h3>
+                <p>Professional makeup services for your special occasions.</p>
+                <div class="service-price">₹4,999</div>
+                <a href="#booking" class="service-btn">Book Service</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600"
+            alt="Facial treatment">
+
+            <div class="service-info">
+                <h3>Facial Treatment</h3>
+                <p>Relaxing skincare treatments with professional care.</p>
+                <div class="service-price">₹999</div>
+                <a href="#booking" class="service-btn">Book Service</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600"
+            alt="Hair styling">
+
+            <div class="service-info">
+                <h3>Hair Styling</h3>
+                <p>Beautiful hairstyles for everyday and special occasions.</p>
+                <div class="service-price">₹799</div>
+                <a href="#booking" class="service-btn">Book Service</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600"
+            alt="Nail art">
+
+            <div class="service-info">
+                <h3>Nail Art</h3>
+                <p>Creative nail designs and professional nail care.</p>
+                <div class="service-price">₹599</div>
+                <a href="#booking" class="service-btn">Book Service</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600"
+            alt="Spa treatment">
+
+            <div class="service-info">
+                <h3>Body Spa</h3>
+                <p>A relaxing spa experience to refresh and unwind.</p>
+                <div class="service-price">₹1,499</div>
+                <a href="#booking" class="service-btn">Book Service</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600"
+            alt="Beauty care">
+
+            <div class="service-info">
+                <h3>Skin Care</h3>
+                <p>Personalized beauty and skincare services.</p>
+                <div class="service-price">₹1,199</div>
+                <a href="#booking" class="service-btn">Book Service</a>
+            </div>
+        </div>
+
     </div>
 </section>
 
-<!-- OFFER -->
-<div class="offer">
-    <h2>Make Every Celebration Sweeter!</h2>
-    <p>Delicious cakes, beautiful memories and endless happiness.</p>
-    <br>
-    <a href="#products" class="btn"
-    style="background:white;color:#422b32">Order Now</a>
-</div>
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+
+    <div class="why-card">
+        <h3>💖 Expert Professionals</h3>
+        <p>Experienced beauty professionals providing quality service.</p>
+    </div>
+
+    <div class="why-card">
+        <h3>✨ Premium Products</h3>
+        <p>Carefully selected products for our beauty services.</p>
+    </div>
+
+    <div class="why-card">
+        <h3>🌸 Relaxing Experience</h3>
+        <p>A welcoming environment designed for comfort and relaxation.</p>
+    </div>
+
+</section>
+
+<!-- APPOINTMENT BOOKING -->
+<section class="booking" id="booking">
+
+    <div class="section-title">
+        <h2>Book Your Appointment</h2>
+        <p>Schedule your beauty session with us</p>
+    </div>
+
+    <div class="booking-container">
+
+        <form id="booking-form">
+
+            <input type="text" id="name"
+            placeholder="Your Full Name" required>
+
+            <input type="email" id="email"
+            placeholder="Your Email Address" required>
+
+            <input type="tel" id="phone"
+            placeholder="Your Phone Number"
+            pattern="[0-9]{10}" maxlength="10" required>
+
+            <select id="service" required>
+                <option value="">Select a Service</option>
+                <option>Bridal Makeup</option>
+                <option>Facial Treatment</option>
+                <option>Hair Styling</option>
+                <option>Nail Art</option>
+                <option>Body Spa</option>
+                <option>Skin Care</option>
+            </select>
+
+            <input type="date" id="date" required>
+
+            <select id="time" required>
+                <option value="">Select Appointment Time</option>
+                <option>10:00 AM</option>
+                <option>11:00 AM</option>
+                <option>12:00 PM</option>
+                <option>02:00 PM</option>
+                <option>03:00 PM</option>
+                <option>04:00 PM</option>
+                <option>05:00 PM</option>
+            </select>
+
+            <textarea id="message"
+            placeholder="Additional Message (Optional)"></textarea>
+
+            <button type="submit" class="primary-btn">
+                Confirm Appointment
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+
+    <div class="section-title">
+        <h2>What Our Customers Say</h2>
+        <p>Beautiful experiences and happy customers</p>
+    </div>
+
+    <div class="testimonials">
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+                "Wonderful experience! The staff were friendly
+                and the service was excellent."
+            </p>
+            <h3>Priya S.</h3>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+                "I loved my makeup and hairstyle. Everything
+                was professional and beautiful."
+            </p>
+            <h3>Divya R.</h3>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+                "Very relaxing atmosphere and great customer
+                service. I will definitely visit again."
+            </p>
+            <h3>Meena K.</h3>
+        </div>
+
+    </div>
+
+</section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
+
     <div class="section-title">
         <h2>Contact Us</h2>
-        <p>We would love to hear from you!</p>
+        <p>We are happy to help you</p>
     </div>
 
-    <p>📍 Chennai, Tamil Nadu, India</p>
-    <p>📞 +91 98765 43210</p>
-    <p>✉️ sweetcravings@example.com</p>
-    <p>⏰ Monday - Sunday: 9 AM - 9 PM</p>
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <h3>📍 Address</h3>
+            <p>Chennai, Tamil Nadu, India</p>
+        </div>
+
+        <div class="contact-card">
+            <h3>📞 Phone</h3>
+            <p>+91 98765 43210</p>
+        </div>
+
+        <div class="contact-card">
+            <h3>✉️ Email</h3>
+            <p>glowgrace@example.com</p>
+        </div>
+
+        <div class="contact-card">
+            <h3>⏰ Working Hours</h3>
+            <p>10 AM - 8 PM</p>
+        </div>
+
+    </div>
+
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <h3>🍰 Sweet Cravings</h3>
-    <p>Fresh Cakes | Sweet Memories | Happy Moments</p>
-    <br>
-    <p>© 2026 Sweet Cravings. All Rights Reserved.</p>
+
+    <div class="logo">✨ Glow & Grace</div>
+
+    <p>Beauty • Confidence • Elegance</p>
+
+    <p>© 2026 Glow & Grace Beauty Studio. All Rights Reserved.</p>
+
 </footer>
 
+<!-- JAVASCRIPT -->
 <script>
-let cart = [];
 
-function addToCart(name, price) {
-    cart.push({name, price});
-    document.getElementById("cart-count").textContent = cart.length;
-    updateCart();
-    alert(name + " added to your cart!");
-}
+// Set minimum booking date to today
+const dateInput = document.getElementById("date");
 
-function updateCart() {
-    let items = document.getElementById("cart-items");
-    let total = 0;
+const today = new Date();
+const localToday = new Date(
+    today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
 
-    if (cart.length === 0) {
-        items.innerHTML = "Your cart is empty.";
-    } else {
-        items.innerHTML = cart.map((item, index) => {
-            total += item.price;
-            return `
-                <p>${item.name} - ₹${item.price}
-                <button onclick="removeItem(${index})">❌</button>
-                </p>
-            `;
-        }).join("");
-    }
+dateInput.min = localToday;
 
-    document.getElementById("total").textContent = "Total: ₹" + total;
-}
 
-function removeItem(index) {
-    cart.splice(index, 1);
-    document.getElementById("cart-count").textContent = cart.length;
-    updateCart();
-}
+// APPOINTMENT FORM
+document.getElementById("booking-form")
+.addEventListener("submit", function(event) {
 
-function toggleCart() {
-    let box = document.getElementById("cart-details");
-    box.style.display = box.style.display === "block" ? "none" : "block";
-    updateCart();
-    if(box.style.display === "block") {
-        box.scrollIntoView({behavior:"smooth"});
-    }
-}
+    event.preventDefault();
 
-function checkout() {
-    if (cart.length === 0) {
-        alert("Please add some cakes to your cart!");
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    if(phone.length !== 10 || !/^[0-9]{10}$/.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
         return;
     }
 
-    let message = "Your order:\n";
-    let total = 0;
+    const bookingMessage =
+        "Appointment Request Details\n\n" +
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Phone: " + phone + "\n" +
+        "Service: " + service + "\n" +
+        "Date: " + date + "\n" +
+        "Time: " + time;
 
-    cart.forEach(item => {
-        message += item.name + " - ₹" + item.price + "\n";
-        total += item.price;
-    });
+    alert(
+        "Thank you, " + name +
+        "!\n\nYour appointment request has been prepared.\n\n" +
+        bookingMessage +
+        "\n\nPlease contact the salon to confirm your appointment."
+    );
 
-    message += "\nTotal: ₹" + total;
-    alert(message + "\n\nThank you for shopping with us!");
+    this.reset();
+});
 
-    cart = [];
-    document.getElementById("cart-count").textContent = 0;
-    updateCart();
-}
-
-function searchProducts() {
-    let search = document.getElementById("search").value.toLowerCase();
-    let products = document.querySelectorAll(".product");
-
-    products.forEach(product => {
-        let name = product.dataset.name.toLowerCase();
-        product.style.display = name.includes(search) ? "block" : "none";
-    });
-}
 </script>
 
 </body>
